@@ -294,7 +294,27 @@
       .faq-item .faq-answer{padding:0 20px 22px;font-size:16px}
       .trust-notes{font-size:12px}
     }
-</style>
+
+    /* Additional cities and documents, matching the original visual language. */
+    .cities-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:54px}
+    .cities-content{min-width:0}
+    .city-list{display:flex;flex-wrap:wrap;gap:9px;align-items:flex-start}
+    .city-item{white-space:nowrap}
+    .cities-footnote{color:#777E88;font-size:13px;line-height:1.7;margin-top:15px}
+    .cities-more{color:#686F79;font-size:13px;line-height:1.65;margin-top:16px}
+    .legal-section{background:#FAFAFB}
+    .legal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px}
+    .legal-card{min-width:0;display:flex;align-items:center;gap:16px;padding:24px;border-radius:20px;background:#FFFFFF;border:1px solid #E8EAED;box-shadow:var(--shadow-low);transition:transform .2s ease,box-shadow .2s ease}
+    .legal-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .legal-card-icon{display:grid;place-items:center;flex:none;width:49px;height:49px;background:#FFF4C5;border-radius:15px;font-size:28px;color:#3A3420;font-weight:700}
+    .legal-card-copy{display:grid;gap:7px;flex:1;min-width:0}
+    .legal-card-copy strong{font-size:16px;line-height:1.3}
+    .legal-card-copy small{font-size:13px;color:#707680;line-height:1.55}
+    .legal-card-arrow{font-size:23px;color:#777E88;flex:none}
+    @media(max-width:850px){.cities-grid{grid-template-columns:1fr;gap:18px}.legal-grid{grid-template-columns:1fr}}
+    @media(max-width:480px){.legal-card{padding:17px;gap:12px}.legal-card-copy strong{font-size:14px}.legal-card-icon{width:42px;height:42px}.city-item{white-space:normal}}
+
+  </style>
 </head>
 <body>
   <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden">
@@ -320,7 +340,9 @@
       <nav class="desktop-nav" aria-label="Основная навигация">
         <a href="#features">Возможности</a>
         <a href="#how">Как работает</a>
+        <a href="#cities">Города</a>
         <a href="#faq">Вопросы</a>
+        <a href="#documents">Документы</a>
         <a href="#support">Поддержка</a>
       </nav>
       <div class="header-actions">
@@ -329,7 +351,7 @@
       </div>
     </div>
     <nav id="mobile-nav" class="mobile-nav" aria-label="Мобильная навигация">
-      <a href="#features">Возможности</a><a href="#how">Как работает</a><a href="#faq">Вопросы</a><a href="#support">Поддержка</a>
+      <a href="#features">Возможности</a><a href="#how">Как работает</a><a href="#cities">Города</a><a href="#faq">Вопросы</a><a href="#documents">Документы</a><a href="#support">Поддержка</a>
     </nav>
   </header>
   <main id="main">
@@ -388,10 +410,43 @@
         <div class="notice"><svg><use href="#i-info"/></svg><span>Часть цен получена от сервисов, часть рассчитана приблизительно и отмечена знаком ≈. Итоговую стоимость проверяйте при оформлении заказа.</span></div>
       </div>
     </section>
-    <section class="reveal-section cities" aria-labelledby="cities-title">
+    <section class="reveal-section cities" id="cities" aria-labelledby="cities-title">
       <div class="container cities-grid">
-        <div><h2 id="cities-title">Доступные города</h2><p>Доступные сервисы и возможности зависят от города.</p></div>
-        <div class="city-list" aria-label="Города"><span class="city-item">Москва</span><span class="city-item">Санкт-Петербург</span><span class="city-item">Чебоксары</span><span class="city-item">Новосибирск</span><span class="city-item">Екатеринбург</span></div>
+        <div>
+          <p class="section-kicker">География ТаксиЧек</p>
+          <h2 id="cities-title">Больше городов — больше вариантов</h2>
+          <p>Сравнивайте предложения служб такси в разных городах России. Вот некоторые города, представленные в каталоге приложения.</p>
+          <p class="cities-footnote">Список служб, доступных тарифов и возможность получить стоимость конкретной поездки зависят от города и работы внешних сервисов. Актуальный выбор — внутри приложения.</p>
+        </div>
+        <div class="cities-content">
+          <div class="city-list" aria-label="Примеры городов">
+          <span class="city-item">Москва</span>
+          <span class="city-item">Санкт-Петербург</span>
+          <span class="city-item">Чебоксары</span>
+          <span class="city-item">Казань</span>
+          <span class="city-item">Новосибирск</span>
+          <span class="city-item">Екатеринбург</span>
+          <span class="city-item">Нижний Новгород</span>
+          <span class="city-item">Краснодар</span>
+          <span class="city-item">Самара</span>
+          <span class="city-item">Уфа</span>
+          <span class="city-item">Ростов-на-Дону</span>
+          <span class="city-item">Челябинск</span>
+          <span class="city-item">Красноярск</span>
+          <span class="city-item">Омск</span>
+          <span class="city-item">Воронеж</span>
+          <span class="city-item">Пермь</span>
+          <span class="city-item">Волгоград</span>
+          <span class="city-item">Сочи</span>
+          <span class="city-item">Тюмень</span>
+          <span class="city-item">Иркутск</span>
+          <span class="city-item">Владивосток</span>
+          <span class="city-item">Набережные Челны</span>
+          <span class="city-item">Астрахань</span>
+          <span class="city-item">Калининград</span>
+          </div>
+          <p class="cities-more">И другие города России. Выберите свой город в приложении.</p>
+        </div>
       </div>
     </section>
     <section class="reveal-section section" id="faq" aria-labelledby="faq-title">
@@ -413,19 +468,38 @@
         </div>
       </div>
     </section>
+    <section class="reveal-section section legal-section" id="documents" aria-labelledby="documents-title">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="section-kicker">Юридическая информация</p><h2 id="documents-title">Документы ТаксиЧек</h2></div>
+          <p class="section-lead">Условия использования приложения и сведения об обработке данных доступны для ознакомления в любое время.</p>
+        </div>
+        <div class="legal-grid">
+          <a class="legal-card" href="privacy.html" aria-label="Открыть Политику конфиденциальности">
+            <span class="legal-card-icon" aria-hidden="true">♢</span>
+            <span class="legal-card-copy"><strong>Политика конфиденциальности</strong><small>Как приложение обрабатывает информацию и использует сторонние сервисы</small></span>
+            <span class="legal-card-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="legal-card" href="terms.html" aria-label="Открыть Пользовательское соглашение">
+            <span class="legal-card-icon" aria-hidden="true">✓</span>
+            <span class="legal-card-copy"><strong>Пользовательское соглашение</strong><small>Правила работы приложения, сравнения цен и перехода к заказу</small></span>
+            <span class="legal-card-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
     <section class="reveal-section support-section" id="support" aria-labelledby="support-title">
       <div class="container support-grid">
         <div><p class="section-kicker">Поддержка</p><h2 id="support-title">Нужна помощь?</h2><p class="support-text">Сообщите об ошибке или задайте вопрос о работе приложения.</p></div>
         <div class="support-channels">
-          <div class="channel"><span class="channel-icon"><svg><use href="#i-mail"/></svg></span><div class="channel-label"><b>Email</b><span class="channel-value" id="support-email"><span class="placeholder-text">[EMAIL ПОДДЕРЖКИ]</span></span></div></div>
-          <div class="channel"><span class="channel-icon"><svg><use href="#i-send"/></svg></span><div class="channel-label"><b>Telegram</b><span class="channel-value" id="support-telegram"><span class="placeholder-text">[TELEGRAM ПОДДЕРЖКИ]</span></span></div></div>
+          <div class="channel"><span class="channel-icon"><svg><use href="#i-mail"/></svg></span><div class="channel-label"><b>Email</b><span class="channel-value" id="support-email"><a href="mailto:taxicheck_supp@mail.ru">taxicheck_supp@mail.ru</a></span></div></div>
         </div>
       </div>
     </section>
   </main>
   <footer class="reveal-section site-footer">
     <div class="container">
-      <div class="footer-main"><div class="footer-brand">ТаксиЧек <span>© <span id="current-year">2026</span></span></div><nav class="footer-links" aria-label="Правовые документы"><span id="privacy-link" class="placeholder-text">[ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ — ССЫЛКА]</span><span id="terms-link" class="placeholder-text">[УСЛОВИЯ ИСПОЛЬЗОВАНИЯ — ССЫЛКА]</span></nav></div>
+      <div class="footer-main"><div class="footer-brand">ТаксиЧек <span>© <span id="current-year">2026</span></span></div><nav class="footer-links" aria-label="Правовые документы"><a href="privacy.html">Политика конфиденциальности</a><a href="terms.html">Пользовательское соглашение</a></nav></div>
       <p class="footer-disclaimer">ТаксиЧек помогает сравнивать предложения разных сервисов. Перевозку выполняет выбранный сервис такси. Отображаемые цены могут быть приблизительными; актуальную стоимость и условия проверяйте при оформлении заказа.</p>
     </div>
   </footer>
@@ -434,10 +508,10 @@
     /* НАСТРОЙКИ САЙТА: замените значения в квадратных скобках на реальные. */
     const TAXICHECK_CONFIG = {
       apkUrl: "[ССЫЛКА НА APK]", // например: https://example.ru/taxicheck.apk
-      supportEmail: "[EMAIL ПОДДЕРЖКИ]", // например: support@example.ru
-      supportTelegram: "[TELEGRAM ПОДДЕРЖКИ]", // например: https://t.me/taxicheck_support
-      privacyUrl: "[ССЫЛКА НА ПОЛИТИКУ КОНФИДЕНЦИАЛЬНОСТИ]",
-      termsUrl: "[ССЫЛКА НА УСЛОВИЯ ИСПОЛЬЗОВАНИЯ]"
+      supportEmail: "taxicheck_supp@mail.ru", // например: support@example.ru
+      supportTelegram: "", // например: https://t.me/taxicheck_support
+      privacyUrl: "privacy.html",
+      termsUrl: "terms.html"
     };
     const isHttpUrl = value => /^https?:\/\/[^\s]+$/i.test(value) && !value.includes('[');
     const isEmail = value => /^[^\s@\[\]]+@[^\s@\[\]]+\.[^\s@\[\]]+$/.test(value);
@@ -472,14 +546,6 @@
       link.textContent = TAXICHECK_CONFIG.supportTelegram.replace(/^https?:\/\//, '');
       telegramHolder.replaceChildren(link);
     }
-    [['privacyUrl','privacy-link','Политика конфиденциальности'],['termsUrl','terms-link','Условия использования']].forEach(([configKey, id, title]) => {
-      if (!isHttpUrl(TAXICHECK_CONFIG[configKey])) return;
-      const link = document.createElement('a');
-      link.href = TAXICHECK_CONFIG[configKey];
-      link.textContent = title;
-      const old = document.getElementById(id);
-      old.replaceWith(link);
-    });
     if (isHttpUrl(TAXICHECK_CONFIG.apkUrl)){
       document.querySelector('.download-hint').textContent = 'Установочный файл для Android';
     }
